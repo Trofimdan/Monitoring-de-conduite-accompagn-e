@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoring de conduite accompagnée</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.1.1/chart.min.js"></script>
+</head>
+<body style="background-color: rgb(248,248,248);">
+<h1 class="title">Monitoring de conduite accompagnée</h1>
+<form id="mainForm" method="post">
+  <fieldset>
+    <legend>Informations personnelles</legend>
+    <div class="personal-information">
+      <p>
+        <label for="fullname">Nom complet :</label>
+        <input
+          type="text"
+          id="fullname"
+          name="fullname"
+          placeholder="Entrez votre nom complet"
+          minlength="2"
+          maxlength="20"
+          required
+        >
+      </p>
+      <p>
+         <label for="email"> Adresse électronique :</label> 
+        <input
+          type="email" 
+          id="email"
+          name="email"
+          placeholder="Entrez votre adresse électronique"
+          required
+        >
+      </p>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>Time</legend>
+    <p>
+      <label for="form-departure-time">Departure time :</label>
+      <input
+        type="datetime-local"
+        id="form-departure-time"
+        name="form-date"
+        required
+      >
+    </p>
+    <p>
+      <label for="form-arrival-time">Arrival time :</label>
+      <input
+        type="datetime-local"
+        id="form-arrival-time"
+        name="form-date"
+        required
+      >
+    </p>
+    <p>
+      <label for="distance">Distance :</label>
+      <input
+        type="number"
+        id="distance"
+        name="distance"
+        min="1"
+        max="3000"
+        required
+      >
+    </p>
+    
+    <p>
+      <label for="meteo">Meteo :</label>
+      <select id="meteo">
+        <option>Clair</option>
+        <option>Partiellement nuageux</option>
+        <option>Nuageux</option>
+        <option>Pluvieux</option>
+      </select>
+    </p>
+    
+    <p>
+      <button id="submitButton" type="button">Envoyer</button>
+    </p>
+  </fieldset>
+</form>
+<div class="table-container">
+  <h2 class="title">Les donnees:</h2>
+  <table id="table">
+    <tbody>
+    <tr>
+      <th>Nr</th>
+      <th>Name</th>
+      <th>Departure time</th>
+      <th>Arrival time</th>
+      <th>Meteo</th>
+      <th>Distance</th>
+    </tr>
+    <tr>
+      <td colspan="5"><b>Total:</b></td>
+      <td colspan="1" id="totalSum"><b></b></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<h2 class="title">Chart info:</h2>
+<div id="chartContainer">
+  <canvas id="chart"></canvas>
+</div>
+
+
+</body>
+
+<script src="index.js"></script>
+</html>
