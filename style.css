@@ -1,0 +1,142 @@
+body, input, button {
+    font-family: Verdana;
+    font-size: 1em;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+}
+
+#mainForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+fieldset {
+    width: 450px;
+    border: 1px solid;
+    border-radius: 15px;
+    margin: 5px 10px;
+    line-height: 35px;
+}
+
+input {
+    all: unset;
+    background-color: #fff;
+    border: 1px solid #afafaf;
+    border-radius: 25px;
+    padding: 0.1rem 1rem;
+}
+
+input[required]:valid {
+    border: 1px green solid;
+}
+
+select {
+    background-color: #fff;
+    border: 1px solid #afafaf;
+    border-radius: 25px;
+    padding: 0.5rem 1rem;
+}
+
+button {
+    all: unset;
+    color: #ffffff;
+    display: flex;
+    justify-content: end;
+    background-color: rgb(35, 112, 251);
+    width: fit-content;
+    border-radius: 25px;
+    padding: .1rem 1rem;
+    margin: 1rem auto;
+    cursor: pointer;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: auto;
+
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 25px;
+    overflow: hidden;
+    width:65vw;
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 1em;
+    background: #ddd;
+    border-bottom: 2px solid white;
+    text-align: center;
+}
+
+.personal-information {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+p {
+    display: flex;
+    flex-direction: column;
+}
+
+canvas {
+    border: 1px solid;
+    border-radius: 25px;
+}
+
+#chartContainer {
+    position: relative;
+    margin: auto;
+    height: 50vh;
+    width: 65vw;
+}
+
+@media (max-width: 768px) {
+    .title {
+        display: flex;
+        justify-content: center;
+    }
+
+    #mainForm {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    fieldset {
+        width: 90%;
+    }
+
+    .table-container table,
+    .table-container thead,
+    .table-container tbody,
+    .table-container th,
+    .table-container td,
+    .table-container tr {
+        display: block;
+        width: 100%;
+    }
+
+    .table-container th:nth-child(5n+1):first-child,
+    .table-container td:nth-child(5n+1):first-child {
+        background-color: #c2cede;
+    }
+
+    canvas {
+        width: 90%;
+    }
+
+    #chartContainer {
+        width: 90%;
+    }
+}
